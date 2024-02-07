@@ -1,0 +1,11 @@
+groups:
+  - name: event_alerts
+    rules:
+      - alert: HighEventCount
+        expr: events_count_total > 15
+        for: 1m
+        labels:
+          severity: "critical"
+        annotations:
+          summary: "High number of events"
+          description: "The event count has exceeded the configured threshold."

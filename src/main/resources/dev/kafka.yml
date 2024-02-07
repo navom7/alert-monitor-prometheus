@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    bootstrap-servers: host.docker.internal:9092
+
+    dlq-topic: dlq-topic
+    client-event-partitioned-topic: client-event-partitioned-topic
+    client-event-partitioned-group-id: client-event-partitioned-group-id
+    client-event-dlq-group-id: client-event-dlq-group-id
+    no-of-partitions: 10
+    retry:
+      backoff:
+        interval: 500
+        max-attempts: 3
